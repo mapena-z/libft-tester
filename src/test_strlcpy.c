@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_strlcpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mapena-z <mapena-z@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mapena-z <mapena-z@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 17:55:13 by mapena-z          #+#    #+#             */
-/*   Updated: 2026/05/24 19:24:13 by mapena-z         ###   ########.fr       */
+/*   Updated: 2026/06/05 00:32:58 by mapena-z         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int run_subtest(int index)
     }
     if (index == 2)
     {
-        char dst1[6] = "------";
-        char dst2[6] = "------";
+        char dst1[7] = "------";
+        char dst2[7] = "------";
         size_t r1 = ft_strlcpy(dst1, "LongString", mid);
         size_t r2 = real_strlcpy_behavior(dst2, "LongString", mid);
         return (r1 == r2 && memcmp(dst1, dst2, 6) == 0);

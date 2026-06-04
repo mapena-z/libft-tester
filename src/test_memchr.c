@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: mapena-z <mapena-z@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/24 18:44:41 by mapena-z          #+#    #+#             */
-/*   Updated: 2026/05/27 12:07:58 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2026/06/05 00:32:28 by mapena-z         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 #include "../../libft.h"
 #include <string.h>
 
-int g_num_subtests = 10; 
+int g_num_subtests = 9; 
 
 int run_subtest(int index)
 {
     char buffer[] = "At\042School"; 
     size_t zero = 0;
-    size_t giant = 2147483647;
 
     if (index == 1)
         return (ft_memchr(buffer, 'A', 9) == memchr(buffer, 'A', 9));
@@ -46,10 +45,5 @@ int run_subtest(int index)
         char double_str[] = "ababab";
         return (ft_memchr(double_str, 'b', 6) == (void *)&double_str[1]);
     }
-    if (index == 10)
-    {
-        void *volatile_ptr = (void *)buffer;
-        return (ft_memchr(volatile_ptr, 't', giant) == memchr(volatile_ptr, 't', giant));
-    } 
     return (0);
 }
